@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Statistics } from '../components/Statistics/Statistics';
-import { Notification } from '../components/Notification/Notification';
-import { FeedbackOptions } from '../components/FeedbackOptions/FeedbackOptions';
-import { Section } from '../components/Section/Section';
+import { Statistics } from '../Statistics/Statistics';
+import { Notification } from '../Notification/Notification';
+import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions';
+import { Section } from '../Section/Section';
 import { Container } from './App.styled';
 
 export default class App extends Component {
@@ -30,10 +30,11 @@ export default class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
+    const options = ['good', 'neutral', 'bad'];
     return (
       <Container>
         <Section title="Please leave feedback">
-          <FeedbackOptions handle={this.handleFeedback} />
+          <FeedbackOptions handle={this.handleFeedback} options={options} />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() > 0 ? (

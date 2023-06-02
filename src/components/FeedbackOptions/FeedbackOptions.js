@@ -1,18 +1,14 @@
 import PropTypes from 'prop-types';
 import { ButtonContainer, ButtonFeedBack } from './FeedbackOptions.styled';
 
-function FeedbackOptions({ handle }) {
+function FeedbackOptions({ handle, options }) {
   return (
     <ButtonContainer>
-      <ButtonFeedBack name="good" onClick={handle}>
-        Good
-      </ButtonFeedBack>
-      <ButtonFeedBack name="neutral" onClick={handle}>
-        Neutral
-      </ButtonFeedBack>
-      <ButtonFeedBack name="bad" onClick={handle}>
-        Bad
-      </ButtonFeedBack>
+      {options.map(option => (
+        <ButtonFeedBack key={option} name={option} onClick={handle}>
+          {option}
+        </ButtonFeedBack>
+      ))}
     </ButtonContainer>
   );
 }

@@ -14,6 +14,7 @@ export const ButtonFeedBack = styled.button`
     1px 4px 6px rgba(0, 0, 0, 0.16);
   text-shadow: 5px 5px 10px black;
   font-size: 18px;
+  text-transform: capitalize;
 
   :hover {
     cursor: pointer;
